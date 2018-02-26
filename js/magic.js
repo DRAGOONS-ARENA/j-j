@@ -6,6 +6,9 @@ const list = document.getElementById("list");
 const extra = document.getElementById("extra");
 const textarea = document.getElementById("textarea");
 const send = document.getElementById("send");
+const modal = document.getElementById("modal");
+const modal_head = document.getElementById("modal_head");
+
 
 /////////////////// \\\\\\\\\\\\\\\\\\\\
 
@@ -33,11 +36,20 @@ var Auth = firebase.auth();
 //////////////////// \\\\\\\\\\\\\\\\\\\\
 
 
+//////////////////// When the website loads \\\\\\\\\\\\\\\\\\\\
+
+window.onload = starting()
+
+
 //////////////////// Event Listeners \\\\\\\\\\\\\\\\\\\\
 
+//window.addEventListener('load', e => starting() )
 login.addEventListener('click', e => login() );
 
 //////////////////// \\\\\\\\\\\\\\\\\\\\
+
+
+
 
 //////////////////// Functions \\\\\\\\\\\\\\\\\\\\
 
@@ -49,6 +61,14 @@ Auth.getRedirectResult()
       .then(function (result) {});
       .catch(function (error) {});
 
-}
+};
+
+
+function starting() {
+
+//modal.classList.add("is-active");
+modal_head.innerHTML="Login";
+
+};
 
 /////////////////// \\\\\\\\\\\\\\\\\\\\
