@@ -1,8 +1,21 @@
+//////////////////// Elements \\\\\\\\\\\\\\\\\\\\
+
+const name = document.getElementById("name");
+const setting = document.getElementById("setting");
+const list = document.getElementById("list");
+const extra = document.getElementById("extra");
+const textarea = document.getElementById("textarea");
+const send = document.getElementById("send");
+
+/////////////////// \\\\\\\\\\\\\\\\\\\\
+
+
 var provider = new firebase.auth.GoogleAuthProvider();
 
 
 
 
+////////////////////Firebase\\\\\\\\\\\\\\\\\\\\
 
 // Initialize Firebase
 var config = {
@@ -15,15 +28,27 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var login= document.getElementById('login');
+var Auth = firebase.auth();
 
-login.addEventListener('click', e => {
-firebase.auth().signInWithRedirect(provider);
-firebase.auth().getRedirectResult()
-               .then(function (user) {
-               console.log(user);
-               })
-               .catch(function (err) {
-               console.log(err.message)
-               });
-});
+//////////////////// \\\\\\\\\\\\\\\\\\\\
+
+
+//////////////////// Event Listeners \\\\\\\\\\\\\\\\\\\\
+
+login.addEventListener('click', e => login() );
+
+//////////////////// \\\\\\\\\\\\\\\\\\\\
+
+//////////////////// Functions \\\\\\\\\\\\\\\\\\\\
+
+function login() {
+
+Auth.signInWithRedirect (provider);
+
+Auth.getRedirectResult()
+      .then(function (result) {});
+      .catch(function (error) {});
+
+}
+
+/////////////////// \\\\\\\\\\\\\\\\\\\\
