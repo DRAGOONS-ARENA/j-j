@@ -8,6 +8,7 @@ const textarea = document.getElementById("textarea");
 const send = document.getElementById("send");
 const modal = document.getElementById("modal");
 const modal_head = document.getElementById("modal_head");
+const login = document.getElementById("login");
 
 
 /////////////////// \\\\\\\\\\\\\\\\\\\\
