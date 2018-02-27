@@ -45,7 +45,7 @@ window.onload = starting()
 //////////////////// Event Listeners \\\\\\\\\\\\\\\\\\\\
 
 //window.addEventListener('load', e => starting() )
-login.addEventListener('click', e => login() );
+login.addEventListener('click', e => alert('clicked') );
 
 //////////////////// \\\\\\\\\\\\\\\\\\\\
 
